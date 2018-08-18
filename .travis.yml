@@ -6,7 +6,7 @@ services:
   - docker
 
 before_install:
-  - make pre-test
+  - make prepare
 
 script:
   - make build
