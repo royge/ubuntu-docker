@@ -10,7 +10,7 @@ commandTests:
     args: ["git"]
     expectedOutput: ["/usr/bin/git\n"]
 
-  - name: "git installation"
+  - name: "curl installation"
     command: "which"
     args: ["curl"]
     expectedOutput: ["/usr/bin/curl\n"]
