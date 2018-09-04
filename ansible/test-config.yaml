@@ -1,0 +1,62 @@
+schemaVersion: '2.0.0'
+commandTests:
+  - name: "vim installation"
+    command: "which"
+    args: ["vim"]
+    expectedOutput: ["/usr/bin/vim\n"]
+
+  - name: "git installation"
+    command: "which"
+    args: ["git"]
+    expectedOutput: ["/usr/bin/git\n"]
+
+  - name: "curl installation"
+    command: "which"
+    args: ["curl"]
+    expectedOutput: ["/usr/bin/curl\n"]
+
+  - name: "wget installation"
+    command: "which"
+    args: ["wget"]
+    expectedOutput: ["/usr/bin/wget\n"]
+
+  - name: "sudo installation"
+    command: "which"
+    args: ["sudo"]
+    expectedOutput: ["/usr/bin/sudo\n"]
+
+  - name: "cmake installation"
+    command: "which"
+    args: ["cmake"]
+    expectedOutput: ["/usr/bin/cmake\n"]
+
+  - name: "ubuntu user"
+    command: "id"
+    args: ["-u", "ubuntu"]
+    expectedOutput: ["1000\n"]
+
+  - name: "ubuntu is current user"
+    command: "whoami"
+    expectedOutput: ["ubuntu\n"]
+
+  - name: "ubuntu has no password"
+    command: "passwd"
+    args: ["--status", "ubuntu"]
+    expectedOutput: ["ubuntu NP *"]
+
+  - name: "ubuntu is sudoer"
+    command: "sudo"
+    args: ["-v"]
+    expectedOutput: [""]
+
+  - name: "ubuntu's home directory"
+    command: "pwd"
+    expectedOutput: ["/home/ubuntu"]
+
+  - name: "ansible installation"
+    command: "pip"
+    args: ["show", "ansible"]
+    expectedOutput: [
+        "ansible\n",
+        "Version: 2.6.*\n",
+    ]
