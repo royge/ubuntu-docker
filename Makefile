@@ -1,7 +1,7 @@
 build:
 	docker build -t ubuntu:latest .
-	cd ansible && docker build -t ubuntu:ansible .
 	docker tag ubuntu:latest royge/ubuntu:latest
+	cd ansible && docker build -t ubuntu:ansible .
 	docker tag ubuntu:ansible royge/ubuntu:ansible
 
 push:
